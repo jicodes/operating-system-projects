@@ -31,10 +31,10 @@ sudo dmesg -c
 
 ## How to test the kernel module
 
-1. Upload module source coed file to cloud vm directory:
+1. Upload module source code and Makefile to cloud vm directory:
    /usr/src/kernels/
 
-2. Use `make` or `gcc` to build into a `<module_name>.ko` file
+2. Use `make` to build into a `<module_name>.ko` file
 
 ```bash
 make
