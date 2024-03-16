@@ -1,9 +1,9 @@
 obj-m += simple.o
 
-KERNEL_DIR := /usr/src/kernels/$(shell uname -r)
+KERNEL_DIR := /lib/modules/$(shell uname -r)/build
 
 all:
-    make -C $(KERNEL_DIR) M=$(PWD) modules
+	make -C $(KERNEL_DIR) M=$(PWD) modules
 
 clean:
-    make -C $(KERNEL_DIR) M=$(PWD) clean
+	make -C $(KERNEL_DIR) M=$(PWD) clean
