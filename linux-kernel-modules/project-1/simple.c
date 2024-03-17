@@ -17,7 +17,7 @@ static LIST_HEAD(birthday_list);
 /* This function is called when the module is loaded. */
 static int simple_init(void)
 {
-    struct birthday *person;
+    struct birthday *person, *ptr;
     int i;
 
     // Create and initialize five struct birthday instances
@@ -42,7 +42,6 @@ static int simple_init(void)
     }
 
     // Traverse the linked list and output its contents to the kernel log buffer
-    struct birthday *ptr;
     printk(KERN_INFO "Linked List Contents:\n");
     list_for_each_entry(ptr, &birthday_list, list) {
         printk(KERN_INFO "Birthday: %d/%d/%d\n", ptr->day, ptr->month, ptr->year);
