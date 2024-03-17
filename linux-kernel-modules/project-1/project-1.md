@@ -32,13 +32,17 @@ sudo dmesg -c
 ## How to test the kernel module
 
 1. Upload module source code and Makefile to cloud vm directory:
-   /usr/src/kernels/
+   /usr/src/kernel-modules/
 
 2. Use `make` to build into a `<module_name>.ko` file
 
 ```bash
 make
 ```
+- You may install some packages depending on the distro of your vm, for example:
+- `gcc`
+- `make`
+- `...`
 
 3. Load the Kernel Module:
 
@@ -53,7 +57,7 @@ sudo insmod <module_name>.ko
 4. Verify the Module is Loaded:
 
 - After loading the kernel module, we can verify that it has been loaded successfully by checking the kernel log using the `dmesg` command.
-- Run `dmesg` in the terminal and look for log messages related to the module to ensure it was loaded without any errors.
+- Run `sudo dmesg -c` in the terminal and look for log messages related to the module to ensure it was loaded without any errors.
 
 5. Unload the Kernel Module:
 
@@ -65,4 +69,4 @@ sudo rmmod <module_name>
 
 6. Verify the Module is Unloaded:
 
-- After unloading the kernel module, we can verify that it has been unloaded successfully by checking the kernel log using the `dmesg` command.
+- After unloading the kernel module, we can verify that it has been unloaded successfully by checking the kernel log using the `sudo dmesg -c` command.
